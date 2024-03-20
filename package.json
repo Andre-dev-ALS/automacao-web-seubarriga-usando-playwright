@@ -1,0 +1,19 @@
+{
+  "name": "automacao-web-seubarriga-usando-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js --require ./steps/*.js --tags @login "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.32.3",
+
+    "playwright": "^1.32.3"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^8.11.1"
+  }
+}
