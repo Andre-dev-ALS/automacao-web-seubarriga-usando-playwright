@@ -6,15 +6,15 @@ let lblMensagemBenvindo = "Bem vindo";
 
 class LoginPage {
 
- getUrl(){
-return url;
+    getUrl() {
+        return url;
     }
 
-     getTxtEmail(){
-        return         txtEmail
+    getTxtEmail() {
+        return txtEmail
     }
 
-    getTxtSenha(){
+    getTxtSenha() {
         return txtSenha;
     }
 
@@ -22,8 +22,8 @@ return url;
         return btmEntrar
     }
 
-    getLblMensagemBemVindo(){
-        return"//*[starts-with(text(), '" + lblMensagemBenvindo + "')]";
+    getLblMensagemBemVindo() {
+        return "//div[starts-with(text(), '" + lblMensagemBenvindo + "')]";
     }
 
 }

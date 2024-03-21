@@ -1,27 +1,28 @@
-const { expect } = require('@playwright/test');
 const { LoginPage } = require('../login/loginPage');
 let loginPage = new LoginPage()
+const { WebActions } = require('../../Utility/webActions');
+let webAction = new WebActions();
+
 class LoginLogic {
 
     async acessarAplicacao() {
-        await global.page.goto( loginPage.getUrl())
+        await global.page.goto(loginPage.getUrl())
     }
 
     async preencherCampoEmail() {
-        await global.page.locator(loginPage.getTxtEmail()).fill('emailparatestesautomacao@gmail.com')
+        await webAction.wright(loginPage.getTxtEmail(), 'emailparatestesautomacao@gmail.com', 2000);
     }
 
     async preencherCampoSenha() {
-        await global.page.locator(loginPage.getTxtSenha()).fill('automacaoteste')
+        await webAction.wright(loginPage.getTxtSenha(), 'automacaoteste', 2000);
     }
 
     async clicarEmEntrar() {
-        await global.page.locator(loginPage.getBtmEntrar()).click()
+        await webAction.click(loginPage.getBtmEntrar());
     }
 
     async validarUsuarioLogado() {
-        let lblMensagemBenvindo = await global.page.locator(loginPage.getLblMensagemBemVindo())
-        await expect(lblMensagemBenvindo).toBeVisible()
+        await webAction.validateText(loginPage.getLblMensagemBemVindo(), 'Bem vindo, André Automatizador!')
     }
 
 }
